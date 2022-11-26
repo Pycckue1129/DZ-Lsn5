@@ -6,18 +6,18 @@
 // [-4, -6, 89, 6] -> 0
 
 
-var array = FillArray(10);
+var array = FillArray(5);
 PrintArray(array);
 Console.WriteLine();
-Console.WriteLine(GetSumOddNum(array));
+Console.WriteLine(GetSumOddIndex(array));
 
 
-int GetSumOddNum(int[] array)
+int GetSumOddIndex(int[] array)
 {
     int sumOdd = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] % 2 != 0)
+        if (i % 2 != 0)
         {
             sumOdd = sumOdd + array[i];
         }
@@ -30,7 +30,7 @@ int[] FillArray (int length)
     int[] array = new int[length];
     for (int i = 0; i < length; i++)
     {
-        array[i] = new Random().Next(100,999);
+        array[i] = new Random().Next(0,10);
     }
     return array;
 }
